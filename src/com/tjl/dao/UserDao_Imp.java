@@ -117,20 +117,19 @@ public class UserDao_Imp implements UserDao {
 	}
 
 	@Override
-	public User select(String sname) {
+	public User select(String sid) {
 		Connection conn = JDBCUtils.getMysqlConn();
         PreparedStatement ps = null;
         ResultSet rs = null;
         String password = null;
         try {
-            ps = conn.prepareStatement("select * from user where sname = ? ");
-            ps.setString(1,sname);//设置第一个问号的值
-//            ps.setString(2,date);
+            ps = conn.prepareStatement("select * from info where sid = ? ");
+            ps.setString(1,sid);//设置第一个问号的值
             rs = ps.executeQuery();
             while(rs.next()){
-                password = rs.getString("upass");
+                password = rs.getString("passwors");
             }
-            return new User(sname,password);
+            return new User(sid,password);
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {
