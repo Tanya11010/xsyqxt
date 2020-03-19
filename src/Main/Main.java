@@ -75,12 +75,12 @@ public class Main {
                     }
                     break;
                 case 4:
-                    String sid1 = View.deleteMenuView();
+                    String sid1 = View.selectMenuView();
                     User selectUser = UserDao.select(sid1);
                     if (selectUser!=null){
                         System.out.println("您查询的信息如下：");
-                        System.out.printf("姓名：%s 密码：%s 用户类型：%d\n",
-                                selectUser.getSname(),selectUser.getPassword(),selectUser.getType());
+                        System.out.printf("学号：%s\n 姓名：%s\n  学院：%s\n 班级:%s\n 电话号码：%s\n 班主任：%s\n  班主任电话：%s\n 是否为武汉籍？：%s\n 是否为湖北籍（除武汉外）？：%s\n 是否接触过武汉疫区人员？:%s\n 是否接触过湖北疫区（除武汉）人员：%s\n 是否有疑似病症？：%s\n 是否为确诊患者？：%s\n 地址:%s\n 上报日期:%s\n  " ,
+                        		selectUser.getSid(),selectUser.getSname(),selectUser.getCollege(),selectUser.getSclass(),selectUser.getTelephone(),selectUser.getHeadmaster(),selectUser.getMaster_telephone(),selectUser.getWuhanji(),selectUser.getHubeiji(),selectUser.getTouch_wuhan(),selectUser.getTouch_hubei(),selectUser.getSuspected(),selectUser.getComfrimed(),selectUser.getAddress(),selectUser.getDate());
                     }else {
                         System.out.println("查询失败，查无此人");
                     }
