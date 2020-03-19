@@ -24,7 +24,7 @@ public interface UserDao {
 	 * @param user 要添加的对象，包含账户和密码
 	 * @return 删除成功，返回true，删除失败，返回false
 	 */
-	boolean delete(String sname);
+	boolean delete(String sid);
 	
 	/**
 	 * 用来修改学生信息的方法
@@ -39,6 +39,6 @@ public interface UserDao {
 	 * @param user 要查询的学生的账号
 	 * @return 如果查询成功，返回user，修改失败，返回null
 	 */
-	User select(String sname);
+	User select(String sid);
 	
 }
