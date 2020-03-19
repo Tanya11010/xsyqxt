@@ -122,14 +122,44 @@ public class UserDao_Imp implements UserDao {
         PreparedStatement ps = null;
         ResultSet rs = null;
         String password = null;
+        String sname = null;
+        String type = null;
+        String college= null;
+        String sclass= null;//班级
+        String telephone= null;//电话
+        String headmaster= null;//班主任
+        String master_telephone= null;//班主任电话
+        String wuhanji= null;//是否武汉人员
+        String hubeiji= null;//是否湖北人
+        String touch_wuhan= null;//接触过武汉人员？
+        String touch_hubei= null;//接触过湖北人员？
+        String suspected= null;//疑似症状？
+        String comfrimed= null;//确诊？
+        String address= null;//地址
+        String date= null;//填报日期
         try {
             ps = conn.prepareStatement("select * from info where sid = ? ");
             ps.setString(1,sid);//设置第一个问号的值
             rs = ps.executeQuery();
             while(rs.next()){
-                password = rs.getString("passwors");
+                password = rs.getString("password");
+                sname = rs.getString("sname");
+                type = rs.getString("type");
+                college= rs.getString("college");
+                sclass = rs.getString("sclass");
+                telephone = rs.getString("telephone");
+                headmaster = rs.getString("headmaster");
+                master_telephone = rs.getString("master_telephone");
+                wuhanji = rs.getString("wuhanji");
+                hubeiji = rs.getString("hubeiji");
+                touch_wuhan = rs.getString("touch_wuhan");
+                touch_hubei = rs.getString("touch_hubei");
+                suspected = rs.getString("suspected");
+                comfrimed = rs.getString("comfrimed");
+                address = rs.getString("address");
+                date = rs.getString("date");
             }
-            return new User(sid,password);
+            return new User(sid,sname,college,sclass,telephone,headmaster,master_telephone,wuhanji,hubeiji,touch_wuhan,touch_hubei,suspected,comfrimed,address,date,type,password);
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {
