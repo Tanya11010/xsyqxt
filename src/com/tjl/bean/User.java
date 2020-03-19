@@ -19,7 +19,7 @@ public class User {
     private String touch_wuhan;//接触过武汉人员？
     private String touch_hubei;//接触过湖北人员？
     private String suspected;//疑似症状？
-    private String comfirmed;//确诊？
+    private String comfrimed;//确诊？
     private String address;//地址
     private String date;//填报日期
     
@@ -130,11 +130,11 @@ public class User {
 	}
 
 	public String getComfrimed() {
-		return comfirmed;
+		return comfrimed;
 	}
 
 	public void setComfirmed(String comfirmed) {
-		this.comfirmed = comfirmed;
+		this.comfrimed = comfirmed;
 	}
 
 	public String getDate() {
@@ -178,9 +178,7 @@ public class User {
 
 
 
-	public User(String sid, String sname, String password, String type, String college, String sclass, String telephone,
-			String headmaster, String master_telephone, String wuhanji, String hubeiji, String touch_wuhan,
-			String touch_hubei, String suspected, String comfirmed, String address, String date) {
+	public User(String sid,String sname,String college,String sclass,String telephone,String headmaster,String master_telephone,String wuhanji,String hubeiji,String touch_wuhan,String touch_hubei,String suspected,String comfrimed,String address,String date,String type,String password) {
 		super();
 		this.sid = sid;
 		this.sname = sname;
@@ -196,7 +194,7 @@ public class User {
 		this.touch_wuhan = touch_wuhan;
 		this.touch_hubei = touch_hubei;
 		this.suspected = suspected;
-		this.comfirmed = comfirmed;
+		this.comfrimed = comfrimed;
 		this.address = address;
 		this.date = date;
 	}
@@ -207,7 +205,7 @@ public class User {
 				+ college + ", sclass=" + sclass + ", telephone=" + telephone + ", headmaster=" + headmaster
 				+ ", master_telephone=" + master_telephone + ", wuhanji=" + wuhanji + ", hubeiji=" + hubeiji
 				+ ", touch_wuhan=" + touch_wuhan + ", touch_hubei=" + touch_hubei + ", suspected=" + suspected
-				+ ", comfirmed=" + comfirmed + ", date=" + date + "]";
+				+ ", comfirmed=" + comfrimed + ", date=" + date + "]";
 	}
 
 
