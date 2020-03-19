@@ -39,8 +39,8 @@ public class View {
         System.out.println("*********\t0.退出\t\t*********");
         System.out.println("*********\t1.添加学生信息\t***********");
         System.out.println("*********\t2.删除学生信息\t**********");
-        System.out.println("*********\t3.查询学生疫情情况\t**********");
-        System.out.println("*********\t4查看疫情统计图表\t**********");
+        System.out.println("*********\t3.修改账户密码 \t**********");
+        System.out.println("*********\t4查询学生疫情情况\t**********");
 
       boolean flag = true;
       int num = -1;
