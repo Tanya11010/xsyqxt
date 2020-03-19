@@ -19,7 +19,7 @@ public class Main {
             type = UserDao.login(user);
             switch (type) {
                 case -1:
-                    System.out.println("登录失败，请重新登录：");
+                    System.out.println("登录失败，请重新登录！");
                     break;
                 case 1:
                     System.out.println("管理员登录成功！");
@@ -57,8 +57,8 @@ public class Main {
                     }
                     break;
                 case 2:
-                    String uname = View.deleteMenuView();
-                    if (UserDao.delete(uname)){
+                    String sid = View.deleteMenuView();
+                    if (UserDao.delete(sid)){
                         System.out.println("删除成功");
                     }else {
                         System.out.println("删除失败");
@@ -75,8 +75,8 @@ public class Main {
                     }
                     break;
                 case 4:
-                    String uname2 = View.deleteMenuView();
-                    User selectUser = UserDao.select(uname2);
+                    String sid1 = View.deleteMenuView();
+                    User selectUser = UserDao.select(sid1);
                     if (selectUser!=null){
                         System.out.println("您查询的信息如下：");
                         System.out.printf("姓名：%s 密码：%s 用户类型：%d\n",
