@@ -193,10 +193,10 @@ public class View {
         System.out.println("***********************************************************");
         System.out.println("********\t查询用户界面\t*********");
         System.out.println("********\t请根据提示操作\t*********");
-        System.out.println("********\t请输入查询账号：\t*********");
-        String sname = input.nextLine();
+        System.out.println("********\t请输入查询学号：\t*********");
+        String sid = input.nextLine();
         System.out.println("***********************************************************");
-        return sname;
+        return sid;
     }
 
 	
