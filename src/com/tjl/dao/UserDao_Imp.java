@@ -12,7 +12,7 @@ public class UserDao_Imp implements UserDao {
 
 	
     	private static final String SQL_INFO_LOGIN="select type from info where sid=? and password=?";
-		private static final String SQL_INFO_INSERT="insert into info(sid,sname,college,sclass,telephone,headmaster,master_telephone,wuhanji,hubeiji,touch_wuhan,touch_hubei,suspected,comfrimed,date,password,type,address) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,2,?)";
+		private static final String SQL_INFO_INSERT="insert into info(sid,sname,college,sclass,telephone,headmaster,master_telephone,wuhanji,hubeiji,touch_wuhan,touch_hubei,suspected,comfrimed,date,password,type,address) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		private static final String SQL_INFO_DELETE="delete from info where sid = ?";
 		private static final String SQL_INFO_UPDATE="update info set password = ? where sid = ?";
 //		private static final String SQL_INFO_SELECT="select * from user where sname = ? and date = ?"
@@ -82,12 +82,12 @@ public class UserDao_Imp implements UserDao {
 	}
 
 	@Override
-	public boolean delete(String sname) {
+	public boolean delete(String sid) {
 		 Connection conn = JDBCUtils.getMysqlConn();
 	        PreparedStatement ps = null;
 	        try {
 	            ps = conn.prepareStatement(SQL_INFO_DELETE);
-	            ps.setString(1,sname);//设置第一个问号的值
+	            ps.setString(1,sid);//设置第一个问号的值
 	            ps.executeUpdate();
 	            return true;
 	        } catch (SQLException e) {
