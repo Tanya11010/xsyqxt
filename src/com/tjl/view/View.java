@@ -2,8 +2,11 @@ package com.tjl.view;
 
 
 import java.sql.Date;
+
 import java.util.Scanner;
 import com.tjl.bean.User;
+
+
 
 public class View {
 
@@ -20,8 +23,7 @@ public class View {
 		System.out.println("********\t\t请输入学号：\t\t*********");
 		String sid=input.nextLine();
 		System.out.println("***********\t\t请输入密码\t\t*****************");
-		String password=input.nextLine();
-		
+		String password=input.nextLine();		
 		System.out.println("***********************************************************");
 		System.out.println("***********************************************************");
 		return new User(sid,password);
@@ -40,7 +42,8 @@ public class View {
         System.out.println("*********\t1.添加学生信息\t***********");
         System.out.println("*********\t2.删除学生信息\t**********");
         System.out.println("*********\t3.修改账户密码 \t**********");
-        System.out.println("*********\t4查询学生疫情情况\t**********");
+        System.out.println("*********\t4.查询学生疫情情况\t**********");
+        System.out.println("*********\t5.查询统计情况\t**********");
 
       boolean flag = true;
       int num = -1;
@@ -54,7 +57,7 @@ public class View {
         {
         	num = Integer.parseInt(input.nextLine());
 //      判断用户输入在0-4之间，超出范围提示重新输入
-            if (num >=0 && num <=4) 
+            if (num >=0 && num <=5) 
             {
                 flag = false;//退出循环
                 break;
@@ -198,6 +201,22 @@ public class View {
         System.out.println("***********************************************************");
         return sid;
     }
+    /**
+     * 信息统计界面
+     * @return 
+     */
+    public static String countMenuView(){
+        System.out.println("*****************************************************************");
+        System.out.println("********\t\t信息统计界面                                               \t*********");
+        System.out.println("********\t\t2020年1-12月新增确诊患者数依次为:\t*********");
+        System.out.println("*****************************************************************");
+       
+        return null;
+
+    
+    }
+
+
 
 	
 	
