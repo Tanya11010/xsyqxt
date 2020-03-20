@@ -8,7 +8,8 @@ import java.sql.SQLException;
 import com.tjl.bean.User;
 import com.tjl.jdbc.JDBCUtils;
 
-public class UserDao_Imp implements UserDao {
+
+public  class UserDao_Imp implements UserDao {
 
 	
     	private static final String SQL_INFO_LOGIN="select type from info where sid=? and password=?";
@@ -115,6 +116,9 @@ public class UserDao_Imp implements UserDao {
 	        }
 	        return false;
 	}
+	
+	
+	
 
 	@Override
 	public User select(String sid) {
@@ -166,6 +170,134 @@ public class UserDao_Imp implements UserDao {
             JDBCUtils.close(rs,ps,conn);
         }
         return null;//查询失败返回null
+	}
+	
+	public boolean count() {
+		Connection conn = JDBCUtils.getMysqlConn();
+        PreparedStatement ps1 = null;
+        PreparedStatement ps2 = null;
+        PreparedStatement ps3 = null;
+        PreparedStatement ps4 = null;
+        PreparedStatement ps5= null;
+        PreparedStatement ps6 = null;
+        PreparedStatement ps7 = null;
+        PreparedStatement ps8 = null;
+        PreparedStatement ps9 = null;
+        PreparedStatement ps10 = null;
+        PreparedStatement ps11 = null;
+        PreparedStatement ps12 = null;
+
+        ResultSet rs1 = null;
+        ResultSet rs2= null; 
+        ResultSet rs3 = null; 
+        ResultSet rs4= null; 
+        ResultSet rs5 =null; 
+        ResultSet rs6 = null; 
+        ResultSet rs7 = null;
+        ResultSet rs8 = null; 
+        ResultSet rs9 = null; 
+        ResultSet rs10 = null; 
+        ResultSet rs11= null; 
+        ResultSet rs12 = null; 
+//        int x[] = {0,0,0,0,0,0,0,0,0,0,0,0,0};
+//        int i=1;
+        try {
+            ps1 = conn.prepareStatement("SELECT countNum FROM (SELECT count(sid) countNum,MONTH(date) yuefen FROM `info` where comfrimed='是' GROUP BY MONTH(date)) as tongji where yuefen='1' ");
+            rs1 = ps1.executeQuery();
+            while(rs1.next()){
+                String countNum = rs1.getString("countNum");
+                System.out.println("1月份:"+countNum);
+           } 
+            ps2 = conn.prepareStatement("SELECT countNum FROM (SELECT count(sid) countNum,MONTH(date) yuefen FROM `info` where comfrimed='是' GROUP BY MONTH(date)) as tongji where yuefen='2'");
+            rs2 = ps2.executeQuery(); 
+            while(rs2.next()){
+            	 String countNum = rs2.getString("countNum");
+                 System.out.println("2月份:"+countNum);
+            }
+
+            ps3 = conn.prepareStatement("SELECT countNum FROM (SELECT count(sid) countNum,MONTH(date) yuefen FROM `info` where comfrimed='是' GROUP BY MONTH(date)) as tongji where yuefen='3'");
+            rs3 = ps3.executeQuery();
+            while(rs3.next()){
+           	 String countNum = rs3.getString("countNum");
+                System.out.println("3月份:"+countNum);
+           }
+            ps4 = conn.prepareStatement("SELECT countNum FROM (SELECT count(sid) countNum,MONTH(date) yuefen FROM `info` where comfrimed='是' GROUP BY MONTH(date)) as tongji where yuefen='4' ");
+            rs4 = ps4.executeQuery();
+            while(rs4.next()){
+           	 String countNum = rs4.getString("countNum");
+             System.out.println("4月份:"+countNum);
+           }
+
+            ps5 = conn.prepareStatement("SELECT countNum FROM (SELECT count(sid) countNum,MONTH(date) yuefen FROM `info` where comfrimed='是' GROUP BY MONTH(date)) as tongji where yuefen='5'");
+            rs5 = ps5.executeQuery(); 
+
+            while(rs5.next()){
+              	 String countNum = rs5.getString("countNum");
+                System.out.println("5月份:"+countNum);
+              }
+            ps6 = conn.prepareStatement("SELECT countNum FROM (SELECT count(sid) countNum,MONTH(date) yuefen FROM `info` where comfrimed='是' GROUP BY MONTH(date)) as tongji where yuefen='6' ");
+            rs6 = ps6.executeQuery(); 
+            while(rs6.next()){
+              	 String countNum = rs6.getString("countNum");
+                System.out.println("6月份:"+countNum);
+              }
+            ps7 = conn.prepareStatement("SELECT countNum FROM (SELECT count(sid) countNum,MONTH(date) yuefen FROM `info` where comfrimed='是' GROUP BY MONTH(date)) as tongji where yuefen='7'");
+            rs7 = ps7.executeQuery(); 
+            while(rs7.next()){
+              	 String countNum = rs7.getString("countNum");
+                System.out.println("7月份:"+countNum);
+              }
+            ps8 = conn.prepareStatement("SELECT countNum FROM (SELECT count(sid) countNum,MONTH(date) yuefen FROM `info` where comfrimed='是' GROUP BY MONTH(date)) as tongji where yuefen='8' ");
+            rs8 = ps8.executeQuery(); 
+            while(rs8.next()){
+              	 String countNum = rs8.getString("countNum");
+                System.out.println("8月份:"+countNum);
+              }
+            ps9 = conn.prepareStatement("SELECT countNum FROM (SELECT count(sid) countNum,MONTH(date) yuefen FROM `info` where comfrimed='是' GROUP BY MONTH(date)) as tongji where yuefen='9'");
+            rs9 = ps9.executeQuery();
+            while(rs9.next()){
+              	 String countNum = rs9.getString("countNum");
+                System.out.println("9月份:"+countNum);
+              }
+            ps10 = conn.prepareStatement("SELECT countNum FROM (SELECT count(sid) countNum,MONTH(date) yuefen FROM `info` where comfrimed='是' GROUP BY MONTH(date)) as tongji where yuefen='10'");
+            rs10 = ps10.executeQuery(); 
+            while(rs10.next()){
+              	 String countNum = rs10.getString("countNum");
+                System.out.println("10月份:"+countNum);
+              }
+            ps11 = conn.prepareStatement("SELECT countNum FROM (SELECT count(sid) countNum,MONTH(date) yuefen FROM `info` where comfrimed='是' GROUP BY MONTH(date)) as tongji where yuefen='11' ");
+            rs11 = ps11.executeQuery();
+            while(rs11.next()){
+              	 String countNum = rs11.getString("countNum");
+                System.out.println("11月份:"+countNum);
+              }
+            ps12 = conn.prepareStatement("SELECT countNum FROM (SELECT count(sid) countNum,MONTH(date) yuefen FROM `info` where comfrimed='是' GROUP BY MONTH(date)) as tongji where yuefen='12'");
+            rs12 = ps12.executeQuery(); 
+            while(rs12.next()){
+              	 String countNum = rs12.getString("countNum");
+                System.out.println("12月份:"+countNum);
+              }
+                           
+
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            JDBCUtils.close(rs1,ps1,conn);
+            JDBCUtils.close(rs2,ps2);
+            JDBCUtils.close(rs3,ps3);
+            JDBCUtils.close(rs4,ps4);
+            JDBCUtils.close(rs5,ps5);
+            JDBCUtils.close(rs6,ps6);
+            JDBCUtils.close(rs7,ps7);
+            JDBCUtils.close(rs1,ps1);
+            JDBCUtils.close(rs8,ps8);
+            JDBCUtils.close(rs9,ps9);
+            JDBCUtils.close(rs10,ps10);
+            JDBCUtils.close(rs11,ps11);
+            JDBCUtils.close(rs12,ps12);
+        }
+        return  false;
 	}
 
 }
