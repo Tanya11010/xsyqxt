@@ -1,6 +1,15 @@
 package Main;
 
+import java.awt.GridLayout;
+import java.sql.Date;
+import java.sql.ResultSet;
+
+import javax.swing.JFrame;
+
+import org.jfree.chart.ChartPanel;
+
 import com.tjl.bean.User;
+import com.tjl.chart.Chart;
 import com.tjl.dao.UserDao;
 import com.tjl.dao.UserDao_Imp;
 import com.tjl.view.View;
@@ -9,14 +18,16 @@ import com.tjl.view.View;
  * 程序入口
  */
 public class Main {
-    static UserDao_Imp UserDao = new UserDao_Imp();
+	
+	 static UserDao_Imp UserDao = new UserDao_Imp();
     public static void main(String[] args) {
+    	
         User user = null;
         int type = -1;
         boolean flag=true;
         while (flag) {
             user = View.indexView();
-            type = UserDao.login(user);
+            type=UserDao.login(user);
             switch (type) {
                 case -1:
                     System.out.println("登录失败，请重新登录！");
@@ -85,6 +96,22 @@ public class Main {
                         System.out.println("查询失败，查无此人");
                     }
 
+                    break;
+                case 5:
+                	View.countMenuView();
+
+                	 if (UserDao.count()){
+                         System.out.println("查询成功！");
+
+                         JFrame frame=new JFrame("数据统计图");
+                         frame.setLayout(new GridLayout(2,2,10,10));
+                         frame.add(new Chart().getChartPanel());
+                         frame.setBounds(50, 50, 800, 600);
+                     	frame.setVisible(true);
+                     }else {
+                         System.out.println("查询失败");
+
+                     }
                     break;
                 default:
                     break;
