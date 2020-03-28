@@ -284,18 +284,18 @@ public  class UserDao_Imp implements UserDao {
             e.printStackTrace();
         }finally {
             JDBCUtils.close(rs1,ps1,conn);
-            JDBCUtils.close(rs2,ps2);
-            JDBCUtils.close(rs3,ps3);
-            JDBCUtils.close(rs4,ps4);
-            JDBCUtils.close(rs5,ps5);
-            JDBCUtils.close(rs6,ps6);
-            JDBCUtils.close(rs7,ps7);
-            JDBCUtils.close(rs1,ps1);
-            JDBCUtils.close(rs8,ps8);
-            JDBCUtils.close(rs9,ps9);
-            JDBCUtils.close(rs10,ps10);
-            JDBCUtils.close(rs11,ps11);
-            JDBCUtils.close(rs12,ps12);
+            JDBCUtils.close(rs2,ps2,conn);
+            JDBCUtils.close(rs3,ps3,conn);
+            JDBCUtils.close(rs4,ps4,conn);
+            JDBCUtils.close(rs5,ps5,conn);
+            JDBCUtils.close(rs6,ps6,conn);
+            JDBCUtils.close(rs7,ps7,conn);
+            JDBCUtils.close(rs1,ps1,conn);
+            JDBCUtils.close(rs8,ps8,conn);
+            JDBCUtils.close(rs9,ps9,conn);
+            JDBCUtils.close(rs10,ps10,conn);
+            JDBCUtils.close(rs11,ps11,conn);
+            JDBCUtils.close(rs12,ps12,conn);
         }
         return  false;
 	}
