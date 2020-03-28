@@ -3,9 +3,6 @@ package com.tjl.dao;
 import java.sql.ResultSet;
 
 
-import org.jfree.chart.ChartPanel;
-
-
 import com.tjl.bean.User;
 
 

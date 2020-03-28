@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 
 import javax.swing.JFrame;
 
-import org.jfree.chart.ChartPanel;
-
 import com.tjl.bean.User;
 import com.tjl.chart.Chart;
 import com.tjl.dao.UserDao;
